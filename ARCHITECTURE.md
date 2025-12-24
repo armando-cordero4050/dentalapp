@@ -87,6 +87,18 @@ src/
 3. **Lint Code**: `npm run lint`
 4. **Preview Production Build**: `npm run preview`
 
+## Path Aliases
+
+The project uses path aliases for cleaner imports:
+```typescript
+// Instead of: import { utils } from '../../../shared/lib/utils'
+// Use: import { utils } from '@/shared/lib/utils'
+```
+
+Configuration:
+- **vite.config.ts**: Defines `@` alias pointing to `./src`
+- **tsconfig.app.json**: TypeScript path mapping for `@/*`
+
 ## Environment Variables
 
 Create a `.env` file with:
