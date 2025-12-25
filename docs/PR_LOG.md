@@ -33,6 +33,23 @@ Regla: no borrar entradas; si algo se corrige, se agrega una nota en el PR sigui
 **Riesgos:** Crítico (Base de seguridad).
 **Notas:** No se implementó lógica de negocio aún.
 
+---
+
+## PR #4 — Patients Schema (Strict DB)
+**Fecha:** 2025-12-24
+**Objetivo:** Implementar esquema de tabla `patients` con revisión estricta (ADR-0009).
+**Cambios:**
+- DB: Tabla `patients` con `clinic_id`, constraints y enum `gender`.
+- DB: RLS policies (CRUD scopeado a `clinic_id`).
+- DB: Índices para búsqueda.
+- DB: Trigger `updated_at`.
+**Verificación:**
+- Revisión manual de SQL cumpliendo `clinic_id` en todo.
+- Constraints únicos por clínica correctos.
+**Riesgos:** Pérdida de integridad si RLS falla (mitigado por test visual).
+**Notas:** Solo Schema, sin UI.
+
+
 
 ---
 
