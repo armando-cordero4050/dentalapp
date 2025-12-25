@@ -8,6 +8,16 @@
    - Lab accounts (Clinic debt) are external (Odoo).
 4. **Idempotency**: All Odoo integrations must be idempotent.
 
+## Supabase Layer (Foundation)
+- **Tables**: `clinics` (root), `profiles` (users), `roles`, `permissions`.
+- **RBAC**: Role-based access control with `roles` and `permissions` tables.
+- **RLS**: Row Level Security is ENABLED on all tables.
+  - `clinics`: Visible to members.
+  - `profiles`: Visible to clinic members.
+- **Functions**:
+  - `get_current_clinic_id()`: Returns tenant ID from profile.
+  - `has_permission(code)`: Checks permissions.
+
 ## Stack
 - **Frontend**: React 18, Vite, TypeScript, TailwindCSS, shadcn/ui.
 - **Backend**: Supabase Cloud (Postgres, Auth, Storage, Edge Functions).

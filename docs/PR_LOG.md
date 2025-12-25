@@ -19,6 +19,23 @@ Regla: no borrar entradas; si algo se corrige, se agrega una nota en el PR sigui
 
 ---
 
+## PR #3 — Supabase Foundation
+**Fecha:** 2025-12-24
+**Objetivo:** Implementar base de datos Supabase (Tablas Core + RLS) y Auth Client.
+**Cambios:**
+- DB: Tablas `clinics`, `profiles`, `roles`, `permissions`.
+- DB: Policies RLS multi-tenant estrictas.
+- DB: Función `get_current_clinic_id`.
+- Front: `AuthContext` y `useSession`.
+**Verificación:**
+- SQL revisado contra decisión de multi-tenancy.
+- Build OK.
+**Riesgos:** Crítico (Base de seguridad).
+**Notas:** No se implementó lógica de negocio aún.
+
+
+---
+
 ## PR #__ — <título>
 **Fecha:** YYYY-MM-DD  
 **Objetivo:**  
